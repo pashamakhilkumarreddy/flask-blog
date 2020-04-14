@@ -1,6 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
   const _navbarBurgers = Array.from(document.querySelectorAll('.navbar-burger'));
-  console.log(_navbarBurgers);
   if (_navbarBurgers.length) {
     _navbarBurgers.forEach(el => {
       el.addEventListener('click', () => {
@@ -11,4 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
+  const _notifications = Array.from(document.querySelectorAll('.notification .delete')) || [];
+  _notifications.forEach(_delete => {
+    _delete.addEventListener('click', () => {
+      _delete.parentNode.remove();
+    })
+  })
 });

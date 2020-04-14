@@ -12,21 +12,21 @@
     </div>
     <div id="main-navbar" class="navbar-menu">
       <div class="navbar-start">
-        <a href="/" class="navbar-item">
+        <a href="{{ url_for('index') }}" class="navbar-item">
           Home
         </a>
-        <a href="/" class="navbar-item">
+        <a href="{{ url_for('about') }}" class="navbar-item">
           About
         </a>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
-          <a href="/login" class="button is-light">
+          <a href="{{ url_for('login') }}" class="button is-light">
             Login
           </a>
         </div>
         <div class="navbar-item">
-          <a href="/register" class="button is-primary">
+          <a href="{{ url_for('register') }}" class="button is-primary">
             <strong>Register</strong>
           </a>
         </div>

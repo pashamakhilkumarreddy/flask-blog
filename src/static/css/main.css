@@ -77,6 +77,10 @@ header {
   margin-top: 5rem;
 }
 
+.mt-2 {
+  margin-top: 1rem;
+}
+
 /* Post */
 .menu {
   border: 1px solid hsl(0, 0%, 75%);
@@ -97,3 +101,11 @@ ul.menu-list li {
   padding: 0.8rem 8rem 0.8rem 1rem;
 }
 
+/* Auth Forms */
+.register-login-text {
+  font-size: 1.2rem;
+}
+
+[class^='notification is-'] {
+  margin: 1rem 3rem;
+}
