@@ -67,9 +67,33 @@ header {
 
 .footer {
   position: absolute;
-  height: 9vh;
   bottom: 0;
   width: 100%;
   padding: 2rem 1.5rem;
   border-top: 1px solid #d7d7d7;
 }
+
+.mt-10 {
+  margin-top: 5rem;
+}
+
+/* Post */
+.menu {
+  border: 1px solid hsl(0, 0%, 75%);
+  padding: 1.5rem;
+  margin-right: 1rem;
+}
+
+ul.menu-list li {
+  border: 1px solid #777;
+}
+
+.menu-label {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.menu-list li a {
+  padding: 0.8rem 8rem 0.8rem 1rem;
+}
+
