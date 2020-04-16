@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block body %}
+<div class="columns is-vcentered is-centered is-mobile mt-10">
+  <div class="column is-three-quarters-mobile is-two-thirds-tablet is-two-thirds-desktop 
+      is-two-quarters-widescreen is-two-quarters-fullhd">
+    <form action="/register" method="POST" class="auth-form registration-form">
+      {{ form.hidden_tag() }}
+      <h1 class="title is-1 has-text-centered">Register</h1>
+      <div class="field">
+        {{ form.username.label(class="label") }}
+
+        {% if form.username.errors %}
+        {{ form.username(class="input is-danger", placeholder="Please enter your username") }}
+        {% for error in form.username.errors %}
+        <p class="help is-danger">
+          {{ error }}
+        </p>
+        {% endfor %}
+        {% else %}
+        {{ form.username(class="input", placeholder="Please enter your username") }}
+        {% endif %}
+      </div>
+      <div class="field">
+        {{ form.email.label(class="label") }}
+        {% if form.email.errors %}
+        {{ form.email(class="input is-danger", placeholder="Please enter your email") }}
+        {% for error in form.email.errors %}
+        <p class="help is-danger">
+          {{ error }}
+        </p>
+        {% endfor %}
+        {% else%}
+        {{ form.email(class="input", placeholder="Please enter your email") }}
+        {% endif %}
+      </div>
+      <div class="field">
+        {{ form.password.label(class="label") }}
+        {% if form.email.errors %}
+        {{ form.password(class="input is-danger", placeholder="Please enter your password") }}
+        {% for error in form.email.errors %}
+        <p class="help is-danger">
+          {{ error }}
+        </p>
+        {% endfor %}
+        {% else%}
+        {{ form.password(class="input", placeholder="Please enter your password") }}
+        {% endif %}
+      </div>
+      <div class="field">
+        {{ form.confirm_password.label(class="label") }}
+        {% if form.confirm_password.errors %}
+        {{ form.confirm_password(class="input is-danger", placeholder="Please repeat your password") }}
+        {% for error in form.confirm_password.errors %}
+        <p class="help is-danger">
+          {{ error }}
+        </p>
+        {% endfor %}
+        {% else%}
+        {{ form.confirm_password(class="input", placeholder="Please repeat your password") }}
+        {% endif %}
+      </div>
+      <div class="control">
+        {{ form.submit(class="button is-link") }}
+      </div>
+      <div class="field mt-2">
+        <div class="control register-login-text">
+          <span>Already with us?</span> <a href="{{ url_for('login') }}"> Log In </a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
