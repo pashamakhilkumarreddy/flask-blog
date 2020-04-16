@@ -20,6 +20,7 @@
         </a>
       </div>
       <div class="navbar-end">
+        {% if not current_user.is_authenticated %}
         <div class="navbar-item">
           <a href="{{ url_for('login') }}" class="button is-light">
             Login
@@ -30,6 +31,18 @@
             <strong>Register</strong>
           </a>
         </div>
+        {% else %}
+        <div class="navbar-item">
+          <a href="{{ url_for('account') }}" class="button is-light is-primary">
+            <strong>Account</strong>
+          </a>
+        </div>
+        <div class="navbar-item">
+          <a href="{{ url_for('logout') }}" class="button is-light is-danger">
+            Log Out
+          </a>
+        </div>
+        {% endif %}
       </div>
     </div>
   </nav>
